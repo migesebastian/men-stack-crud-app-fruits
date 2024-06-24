@@ -8,7 +8,6 @@
         <%= fruit.name %>
     </title> <!-- Dynamic title based on fruit name -->
 </head>
-<a href="/fruits/">Back to Fruits</a>
 
 <body>
     <h1>
@@ -20,10 +19,14 @@
             <p>This fruit is not ready to eat!</p>
             <% } %>
                 <!-- new delete button -->
-                <form action="/fruits/<%=fruit._id%>?_method=DELETE" method="POST">
-                    <button type="submit">Delete <%= fruit.name %></button>
-                </form>
-                <a href="/fruits">Back to Fruits</a>
+                
+    <form action="/fruits/<%=fruit._id%>?_method=DELETE" method="POST">
+        <button type="submit">Delete <%= fruit.name %></button>
+    </form>
+   <!-- add edit page link here -->
+<a href="/fruits/<%= fruit._id %>/edit">Edit <%= fruit.name %></a>
+<a href="/fruits">Back to Fruits</a>
+                
 </body>
 
 </html>
